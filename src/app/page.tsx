@@ -5,7 +5,11 @@ import { useEffect } from "react";
 export default function Home() {
   useEffect(() => {
     if (typeof window !== "undefined" && "serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/service-worker.js");
+      navigator.serviceWorker.register("/service-worker.js").then(() => {
+        console.log("Service Worker registrado com sucesso!");
+      }).catch((error) => {
+        console.error("Erro ao registrar Service Worker:", error);
+      });
     }
 
     let deferredPrompt: any;
@@ -19,8 +23,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col min-h-screen items-center justify-center bg-black text-white">
-      <h1 className="text-7xl font-bold flex gap-2">
+    <main className="flex flex-col min-h-screen items-center justify-center bg-black text-white text-center p-4">
+      <h1 className="text-5xl sm:text-7xl font-bold flex gap-2">
         {"Bolt Network".split("").map((char, index) => (
           <span
             key={index}
@@ -31,7 +35,9 @@ export default function Home() {
           </span>
         ))}
       </h1>
-      <p className="text-lg mt-4 text-gray-400">Conectando inovação e velocidade.</p>
+      <p className="text-lg mt-4 text-gray-400 max-w-[90%] sm:max-w-md">
+        Conectando inovação e velocidade.
+      </p>
     </main>
   );
 }

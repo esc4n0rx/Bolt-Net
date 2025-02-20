@@ -2,21 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @keyframes glow {
     0% {
-      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+        text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
     }
     50% {
-      text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee, 0 0 25px #00ffee;
+        text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee, 0 0 30px #00ffee;
     }
     100% {
-      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+        text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
     }
-  }
-  
-  .animate-glow {
+}
+
+.animate-glow {
     display: inline-block;
     animation: glow 1.5s infinite alternate;
-  }
-  
+}
